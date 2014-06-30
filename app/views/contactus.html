@@ -1,0 +1,13 @@
+<form  class="form" name="contactForm" novalidate ng-submit="send()">
+	<div class="form-group" ng-class="{'has-error' : contactForm.email.$invalid && contactForm.email.$dirty, 'has-success' : contactForm.email.$valid && contactForm.email.$dirty}">
+	<label class="control-label" for="">Email</label>	
+	<input type="email"  name="email" class="form-control" ng-model="user.email" required cu-focus/>
+	<p class="help-block" ng-show="contactForm.email.$invalid && contactForm.email.$dirty && !contactForm.email.$focused">
+       Wrong Email
+	</p>
+	</div>
+	
+	<div class="form-group">
+	<button class="btn btn-primary" type="submit" ng-disabled="contactForm.$invalid">Send</button>
+	</div>
+</form>
