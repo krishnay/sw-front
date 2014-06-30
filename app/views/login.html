@@ -8,7 +8,9 @@
 	</div>
 	<div class="form-group" ng-class="{'has-error' : loginForm.password.$invalid && loginForm.password.$dirty, 'has-success' : loginForm.password.$valid && loginForm.password.$dirty}">
 		<label class="control-label" for="">Password</label>	
-	<input type="password"  name="password" class="form-control" ng-model="user.password" required cu-focus/>
+	<input type="password"  name="password" class="form-control" ng-model="user.password" ng-minlength="6" ng-maxlength="12" required cu-focus/>
+	<span ng-show="loginForm.password.$error.minlength">too short</span>
+	<span ng-show="loginForm.password.$error.maxlength">too long</span>
 	<p class="help-block" ng-show="loginForm.password.$invalid && loginForm.password.$dirty && !loginForm.password.$focused">
        Password is required
 	</p>
